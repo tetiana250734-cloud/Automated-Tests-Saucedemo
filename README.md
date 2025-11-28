@@ -46,8 +46,8 @@ class InventoryPage
     }
 module.exports = new InventoryPage();
 class CartPage {
-    get cartItems() { return $$('.cart_item'); }
-    get checkoutBtn() { return $('#checkout'); }
+    get cartItems() { return ('.cart_item'); }
+    get checkoutBtn() { return ('#checkout'); }
 
     async getCartItemsCount() {
         return await this.cartItems.length;
@@ -59,13 +59,13 @@ class CartPage {
 }
 module.exports = new CartPage();
 class CheckoutPage {
-    get firstName() { return $('#first-name'); }
-    get lastName() { return $('#last-name'); }
-    get postalCode() { return $('#postal-code'); }
-    get continueBtn() { return $('#continue'); }
-    get finishBtn() { return $('#finish'); }
-    get errorMessage() { return $('h3[data-test="error"]'); }
-    get successMessage() { return $('.complete-header'); }
+    get firstName() { return ('#first-name'); }
+    get lastName() { return ('#last-name'); }
+    get postalCode() { return ('#postal-code'); }
+    get continueBtn() { return ('#continue'); }
+    get finishBtn() { return ('#finish'); }
+    get errorMessage() { return ('h3[data-test="error"]'); }
+    get successMessage() { return ('.complete-header'); }
 
     async fillForm(first, last, code) {
         await this.firstName.setValue(first);
@@ -118,7 +118,7 @@ describe('Cart tests', () => {
     it('TC05: Remove item from cart', async () => {
         await InventoryPage.addItem('button[data-test="add-to-cart-sauce-labs-backpack"]');
         await InventoryPage.openCart();
-        await $('button[data-test="remove-sauce-labs-backpack"]').click();
+        await ('button[data-test="remove-sauce-labs-backpack"]').click();
         await expect(InventoryPage.cartBadge).not.toExist();
     });
 });
@@ -175,8 +175,8 @@ describe('Logout test', () => {
     it('TC11: Logout', async () => {
         await LoginPage.open();
         await LoginPage.login('standard_user', 'secret_sauce');
-        await $('#react-burger-menu-btn').click();
-        await $('#logout_sidebar_link').click();
+        await ('#react-burger-menu-btn').click();
+        await ('#logout_sidebar_link').click();
         await expect(browser).toHaveUrl('https://www.saucedemo.com/');
     });
 });
