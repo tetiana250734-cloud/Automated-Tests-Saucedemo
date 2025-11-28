@@ -27,7 +27,6 @@ class LoginPage {
         await this.inputPassword.setValue(password);
         await this.btnLogin.click();
     }
-}
 module.exports = new LoginPage();
 class InventoryPage {
     get cartBadge() { return $('.shopping_cart_badge'); }
