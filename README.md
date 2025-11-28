@@ -28,13 +28,13 @@ class LoginPage {
         await this.btnLogin.click();
     }
 module.exports = new LoginPage();
-class InventoryPage {
-    get cartBadge() { return $('.shopping_cart_badge'); }
-    get cartLink() { return $('.shopping_cart_link'); }
-    get sortDropdown() { return $('.product_sort_container'); }
+class InventoryPage 
+    get cartBadge() { return ('.shopping_cart_badge'); }
+    get cartLink() { return ('.shopping_cart_link'); }
+    get sortDropdown() { return ('.product_sort_container'); }
 
     async addItem(itemSelector) {
-        await $(itemSelector).click();
+        await (itemSelector).click();
     }
 
     async openCart() {
@@ -44,7 +44,6 @@ class InventoryPage {
     async sortBy(option) {
         await this.sortDropdown.selectByVisibleText(option);
     }
-}
 module.exports = new InventoryPage();
 class CartPage {
     get cartItems() { return $$('.cart_item'); }
