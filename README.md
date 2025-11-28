@@ -13,10 +13,10 @@ Tests — Saucedemo
     checkout.spec.js
     logout.spec.js
 class LoginPage {
-    get inputUsername() { return $('#user-name'); }
-    get inputPassword() { return $('#password'); }
-    get btnLogin() { return $('#login-button'); }
-    get errorMessage() { return $('h3[data-test="error"]'); }
+    get inputUsername() { return ('#user-name'); }
+    get inputPassword() { return ('#password'); }
+    get btnLogin() { return ('#login-button'); }
+    get errorMessage() { return ('h3[data-test="error"]'); }
 
     async open() {
         await browser.url('https://www.saucedemo.com/');
